@@ -1,6 +1,10 @@
+﻿# Desafio 2
 
+Desafío en Laravel 5.7.17, Mongodb 4.0
 
-## 
-Desafio en laravel, ajax, mongodb
-Incluye registro de usuarios
-Posibilidad de editar, eliminar
+ - Incluye registro de usuarios   
+ - Posibilidad de editar, eliminar usuarios
+ - Privilegios de administrador y visualizador.
+ 
+ 
+
