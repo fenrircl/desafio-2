@@ -40,7 +40,6 @@
                 <th>Rut</th>
                 <th>Nombre</th>
                 <th>Apellido</th>
-
                 @role('Administrador')
                 <th>Rol</th>
                 <th>Accion</th>
@@ -66,7 +65,7 @@
                     @include('user.form')
                     </form>
                     <div class="deleteContent">
-                            Are you Sure you want to delete <span class="dname"></span> ? <span
+                            ¿Está seguro de eliminar al usuario:  <span class="dname"></span> ? <span
                                 class="hidden did"></span>
                         </div>
                         <div class="modal-footer">
@@ -74,7 +73,7 @@
                                 <span id="footer_action_button" class='glyphicon'> </span>
                             </button>
                             <button type="button" class="btn btn-warning" data-dismiss="modal">
-                                <span class='glyphicon glyphicon-remove'></span> Close
+                                <span class='glyphicon glyphicon-remove'></span> Cerrar
                             </button>
                         </div>
                     </div>
@@ -164,7 +163,7 @@ $(document).ready(function() {
         $('.actionBtn').addClass('btn-danger');
         $('.actionBtn').removeClass('edit');
         $('.actionBtn').addClass('delete');
-        $('.modal-title').text('Delete');
+        $('.modal-title').text('Eliminar');
         $('.did').text($(this).data('id'));
         $('.deleteContent').show();
         $('.form-horizontal').hide();
@@ -235,12 +234,7 @@ $(document).ready(function() {
 });
 
 
-    function refreshTable() {
-  $('div.table-container').fadeOut();
-  $('div.table-container').load(url, function() {
-  $('div.table-container').fadeIn();
-  });
-}
+
 </script>
 
 <script>
@@ -255,7 +249,6 @@ $(document).ready(function() {
                     { data: 'surname', name: 'surname' },
                     @role('Administrador')
                     { data: 'rol.name' },
-
                     {data: 'action', name: 'action', orderable: false, searchable: false}
                     @endrole
                 ]
