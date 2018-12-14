@@ -7,6 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Jenssegers\Mongodb\Auth\User as Authenticatable;
 use Maklad\Permission\Traits\HasRoles;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
@@ -41,7 +42,7 @@ class User extends Authenticatable
         $user->rut = $request->rut;
         $user->name = $request->name;
         $user->surname = $request->surname;
-        $user->password = $request->password;
+        $user->password =  Hash::make($request->password);
         $user->assignRole('Visualizador');
         $user->givePermissionTo('show users');
         $user->save();
