@@ -143,7 +143,9 @@ class UserController extends Controller
 
     if ($validator->passes()) {
         User::store($request);
-        return response()->json(['success'=>'success']);
+      //  return response()->json(['success'=>'success']);
+        return redirect('/user')->with('success', 'Usuario agregado correctamente');
+
     }
 
    // return response()->json(['error'=>$validator->errors()->all()]);
